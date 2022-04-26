@@ -5,8 +5,8 @@ function General(props) {
   const { hello } = props;
 
   return (
-    <div>
-      <form>
+    <div className="general">
+      <form className="general-form">
         <label htmlFor="name">
           Name:
           <input type="text" id="name" />

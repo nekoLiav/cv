@@ -2,8 +2,8 @@ import React from 'react';
 
 function Educational() {
   return (
-    <div>
-      <form>
+    <div className="educational">
+      <form className="educational-form">
         <label>
           School Name:
           <input type="text" />

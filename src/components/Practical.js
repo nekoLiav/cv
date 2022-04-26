@@ -2,8 +2,8 @@ import React from 'react';
 
 function Practical() {
   return (
-    <div>
-      <form>
+    <div className="practical">
+      <form className="practical-form">
         <label>
           Company Name:
           <input type="text" />

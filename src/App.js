@@ -8,14 +8,14 @@ class App extends Component {
     super(props);
 
     this.state = {
-      hello: 'hello',
+      hello: 'hello'
     };
   }
 
   render() {
     const { hello } = this.state;
     return (
-      <div>
+      <div className="main">
         <General hello={hello} />
         <button type="button">Edit</button>
         <Educational />

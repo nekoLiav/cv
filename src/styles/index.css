@@ -14,19 +14,35 @@ code {
 
 .main {
   display: flex;
+  justify-content: space-between;
 }
 
-.general-form {
+.general {
+  width: 100%;
+}
+
+.general-form,
+.general-form label {
   display: flex;
   flex-direction: column;
 }
 
-.educational-form {
+.educational {
+  width: 100%;
+}
+
+.educational-form,
+.educational-form label {
   display: flex;
   flex-direction: column;
 }
 
-.practical-form {
+.practical {
+  width: 100%;
+}
+
+.practical-form,
+.practical-form label {
   display: flex;
   flex-direction: column;
 }

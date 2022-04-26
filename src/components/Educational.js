@@ -37,15 +37,15 @@ class Educational extends Component {
         <form className="educational-form" onSubmit={this.handleSubmit}>
           <label>
             School Name:
-            <input type="text" onChange={this.handleSchoolChange} />
+            <input type="text" value={this.state.school} onChange={this.handleSchoolChange} />
           </label>
           <label>
             Title of Study:
-            <input type="text" onChange={this.handleTitleChange} />
+            <input type="text" value={this.state.title} onChange={this.handleTitleChange} />
           </label>
           <label>
             Date of Study:
-            <input type="text" onChange={this.handleDateChange} />
+            <input type="text" value={this.state.date} onChange={this.handleDateChange} />
           </label>
           <input type="submit" value="Submit" />
           <button type="button">Edit</button>

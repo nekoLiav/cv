@@ -43,19 +43,19 @@ class Practical extends Component {
         <form className="practical-form" onSubmit={this.handleSubmit}>
           <label>
             Company Name:
-            <input type="text" onChange={this.handleCompanyChange} />
+            <input type="text" value={this.state.company} onChange={this.handleCompanyChange} />
           </label>
           <label>
             Title of Position:
-            <input type="text" onChange={this.handlePositionChange} />
+            <input type="text" value={this.state.position} onChange={this.handlePositionChange} />
           </label>
           <label>
             Main Responsibilities:
-            <input type="text" onChange={this.handleTasksChange} />
+            <input type="text" value={this.state.tasks} onChange={this.handleTasksChange} />
           </label>
           <label>
             Dates of Employment:
-            <input type="text" onChange={this.handleDatesChange} />
+            <input type="text" value={this.state.dates} onChange={this.handleDatesChange} />
           </label>
           <input type="submit" value="Submit" />
           <button type="button">Edit</button>

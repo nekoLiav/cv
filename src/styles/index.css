@@ -14,9 +14,17 @@ code {
 
 .main {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.information-fields {
+  display: flex;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1rem;
+  width: 100%;
 }
 
 .general,
@@ -30,8 +38,6 @@ code {
 }
 
 .edit-button {
-  margin-top: auto;
-  margin-left: auto;
   width: 4rem;
 }
 
@@ -49,10 +55,6 @@ code {
 .edit-form label {
   display: flex;
   justify-content: space-between;
-}
-
-.edit-form button {
-  width: 4rem;
 }
 
 fieldset {

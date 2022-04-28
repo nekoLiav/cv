@@ -9,11 +9,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      editState: {
-        general: false,
-        educational: false,
-        practical: false
-      },
+      editState: false,
       general: {
         name: '',
         email: '',
@@ -42,6 +38,7 @@ class App extends Component {
     this.handlePositionChange = this.handlePositionChange.bind(this);
     this.handleRoleChange = this.handleRoleChange.bind(this);
     this.handlePracticalDateChange = this.handlePracticalDateChange.bind(this);
+    this.handleEdit = this.handleEdit.bind(this);
   }
 
   handleNameChange() {
@@ -84,13 +81,22 @@ class App extends Component {
     this.setState();
   }
 
+  handleEdit() {
+    this.state.editState ? this.setState({ editState: false }) : this.setState({ editState: true });
+  }
+
   render() {
     return (
       <div className="main">
-        <Edit />
-        <General />
-        <Educational />
-        <Practical />
+        <div className="information-fields">
+          <Edit editState={this.state.editState} />
+          <General />
+          <Educational />
+          <Practical />
+        </div>
+        <button type="button" className="edit-button" onClick={this.handleEdit}>
+          Edit
+        </button>
       </div>
     );
   }

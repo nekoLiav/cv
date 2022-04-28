@@ -15,13 +15,22 @@ code {
 .main {
   display: flex;
   justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
 }
 
 .general,
 .educational,
 .practical {
+  display: flex;
+  flex-direction: column;
   background: black;
   width: 100%;
+  padding: 1rem;
+}
+
+.edit {
+  margin-top: auto;
 }
 
 .general-edit {

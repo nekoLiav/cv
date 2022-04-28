@@ -11,7 +11,9 @@ class Educational extends Component {
         <p>School Name:</p>
         <p>Title of Study:</p>
         <p>Date of Study:</p>
-        <button type="button">Edit</button>
+        <button type="button" className="edit">
+          Edit
+        </button>
       </div>
     );
   }

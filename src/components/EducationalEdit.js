@@ -48,7 +48,6 @@ class EducationalEdit extends Component {
             <input type="text" value={this.state.date} onChange={this.handleDateChange} />
           </label>
           <button type="submit">Submit</button>
-          <button type="button">Edit</button>
         </form>
       </div>
     );

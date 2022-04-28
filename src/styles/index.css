@@ -17,6 +17,13 @@ code {
   justify-content: space-between;
 }
 
+.general,
+.educational,
+.practical {
+  background: black;
+  width: 100%;
+}
+
 .general-edit {
   width: 100%;
   display: none;

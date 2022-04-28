@@ -58,7 +58,6 @@ class PracticalEdit extends Component {
             <input type="text" value={this.state.dates} onChange={this.handleDatesChange} />
           </label>
           <button type="submit">Submit</button>
-          <button type="button">Edit</button>
         </form>
       </div>
     );

@@ -63,7 +63,6 @@ class GeneralEdit extends Component {
             />
           </label>
           <button type="submit">Submit</button>
-          <button type="button">Edit</button>
         </form>
       </div>
     );

@@ -17,8 +17,9 @@ code {
   justify-content: space-between;
 }
 
-.general {
+.general-edit {
   width: 100%;
+  display: none;
 }
 
 .general-form,
@@ -27,8 +28,9 @@ code {
   flex-direction: column;
 }
 
-.educational {
+.educational-edit {
   width: 100%;
+  display: none;
 }
 
 .educational-form,
@@ -37,8 +39,9 @@ code {
   flex-direction: column;
 }
 
-.practical {
+.practical-edit {
   width: 100%;
+  display: none;
 }
 
 .practical-form,

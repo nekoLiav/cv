@@ -12,7 +12,7 @@ class Practical extends Component {
         <p>Position:</p>
         <p>Role:</p>
         <p>Date of employment:</p>
-        <button type="button" className="edit">
+        <button type="button" className="edit-button">
           Edit
         </button>
       </div>

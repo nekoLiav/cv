@@ -11,7 +11,7 @@ class General extends Component {
         <p>Name:</p>
         <p>Email:</p>
         <p>Phone Number:</p>
-        <button type="button" className="edit">
+        <button type="button" className="edit-button">
           Edit
         </button>
       </div>

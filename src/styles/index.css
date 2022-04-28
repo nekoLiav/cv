@@ -29,39 +29,37 @@ code {
   padding: 1rem;
 }
 
-.edit {
+.edit-button {
   margin-top: auto;
+  margin-left: auto;
+  width: 4rem;
 }
 
-.general-edit {
+.edit {
   width: 100%;
-  display: none;
+  background-color: black;
+  padding: 1rem;
 }
 
-.general-form,
-.general-form label {
+.edit-form {
   display: flex;
   flex-direction: column;
 }
 
-.educational-edit {
-  width: 100%;
-  display: none;
+.edit-form label {
+  display: flex;
+  justify-content: space-between;
 }
 
-.educational-form,
-.educational-form label {
+.edit-form button {
+  width: 4rem;
+}
+
+fieldset {
   display: flex;
   flex-direction: column;
 }
 
-.practical-edit {
-  width: 100%;
-  display: none;
-}
-
-.practical-form,
-.practical-form label {
-  display: flex;
-  flex-direction: column;
+legend {
+  font-weight: bold;
 }

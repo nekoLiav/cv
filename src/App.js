@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import GeneralEdit from './components/GeneralEdit';
-import EducationalEdit from './components/EducationalEdit';
-import PracticalEdit from './components/PracticalEdit';
+import Edit from './components/Edit';
 import General from './components/General';
 import Educational from './components/Educational';
 import Practical from './components/Practical';
@@ -33,6 +31,7 @@ class App extends Component {
         date: ''
       }
     };
+
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleEmailChange = this.handleEmailChange.bind(this);
     this.handlePhoneChange = this.handlePhoneChange.bind(this);
@@ -88,9 +87,7 @@ class App extends Component {
   render() {
     return (
       <div className="main">
-        <GeneralEdit />
-        <EducationalEdit />
-        <PracticalEdit />
+        <Edit />
         <General />
         <Educational />
         <Practical />

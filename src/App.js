@@ -33,6 +33,56 @@ class App extends Component {
         date: ''
       }
     };
+    this.handleNameChange = this.handleNameChange.bind(this);
+    this.handleEmailChange = this.handleEmailChange.bind(this);
+    this.handlePhoneChange = this.handlePhoneChange.bind(this);
+    this.handleSchoolChange = this.handleSchoolChange.bind(this);
+    this.handleSubjectChange = this.handleSubjectChange.bind(this);
+    this.handleEducationalDateChange = this.handleEducationalDateChange.bind(this);
+    this.handleCompanyChange = this.handleCompanyChange.bind(this);
+    this.handlePositionChange = this.handlePositionChange.bind(this);
+    this.handleRoleChange = this.handleRoleChange.bind(this);
+    this.handlePracticalDateChange = this.handlePracticalDateChange.bind(this);
+  }
+
+  handleNameChange() {
+    this.setState();
+  }
+
+  handleEmailChange() {
+    this.setState();
+  }
+
+  handlePhoneChange() {
+    this.setState();
+  }
+
+  handleSchoolChange() {
+    this.setState();
+  }
+
+  handleSubjectChange() {
+    this.setState();
+  }
+
+  handleEducationalDateChange() {
+    this.setState();
+  }
+
+  handleCompanyChange() {
+    this.setState();
+  }
+
+  handlePositionChange() {
+    this.setState();
+  }
+
+  handleRoleChange() {
+    this.setState();
+  }
+
+  handlePracticalDateChange() {
+    this.setState();
   }
 
   render() {

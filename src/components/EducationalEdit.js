@@ -9,22 +9,6 @@ class EducationalEdit extends Component {
       title: '',
       date: ''
     };
-
-    this.handleSchoolChange = this.handleSchoolChange.bind(this);
-    this.handleTitleChange = this.handleTitleChange.bind(this);
-    this.handleDateChange = this.handleDateChange.bind(this);
-  }
-
-  handleSchoolChange(e) {
-    this.setState({ school: e.target.value });
-  }
-
-  handleTitleChange(e) {
-    this.setState({ title: e.target.value });
-  }
-
-  handleDateChange(e) {
-    this.setState({ date: e.target.value });
   }
 
   handleSubmit(e) {
@@ -37,15 +21,15 @@ class EducationalEdit extends Component {
         <form className="educational-form" onSubmit={this.handleSubmit}>
           <label>
             School Name:
-            <input type="text" value={this.state.school} onChange={this.handleSchoolChange} />
+            <input type="text" />
           </label>
           <label>
             Title of Study:
-            <input type="text" value={this.state.title} onChange={this.handleTitleChange} />
+            <input type="text" />
           </label>
           <label>
             Date of Study:
-            <input type="text" value={this.state.date} onChange={this.handleDateChange} />
+            <input type="text" />
           </label>
           <button type="submit">Submit</button>
         </form>

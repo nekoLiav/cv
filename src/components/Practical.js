@@ -49,7 +49,7 @@ class Practical extends Component {
   render() {
     return (
       <div className="practical">
-        {this.state.editState ? (
+        {this.state.editState && (
           <PracticalEdit
             company={this.state.company}
             changeCompany={this.handleCompanyChange}
@@ -61,7 +61,8 @@ class Practical extends Component {
             changeDate={this.handleDateChange}
             handleSubmit={this.handleSubmit}
           />
-        ) : (
+        )}
+        {!this.state.editState && (
           <div className="info">
             <p>Company Name: {this.state.company}</p>
             <p>Position: {this.state.position}</p>

@@ -43,7 +43,7 @@ class Educational extends Component {
   render() {
     return (
       <div className="educational">
-        {this.state.editState ? (
+        {this.state.editState && (
           <EducationalEdit
             school={this.state.school}
             changeSchool={this.handleSchoolChange}
@@ -53,7 +53,8 @@ class Educational extends Component {
             changeDate={this.handleDateChange}
             handleSubmit={this.handleSubmit}
           />
-        ) : (
+        )}
+        {!this.state.editState && (
           <div className="info">
             <p>School Name: {this.state.school}</p>
             <p>Title of Study: {this.state.subject}</p>

@@ -43,7 +43,7 @@ class General extends Component {
   render() {
     return (
       <div className="general">
-        {this.state.editState ? (
+        {this.state.editState && (
           <GeneralEdit
             name={this.state.name}
             changeName={this.handleNameChange}
@@ -53,7 +53,8 @@ class General extends Component {
             changePhone={this.handlePhoneChange}
             handleSubmit={this.handleSubmit}
           />
-        ) : (
+        )}
+        {!this.state.editState && (
           <div className="info">
             <p>Name: {this.state.name}</p>
             <p>Email: {this.state.email}</p>

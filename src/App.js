@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Edit from './components/Edit';
 import General from './components/General';
 import Educational from './components/Educational';
 import Practical from './components/Practical';
@@ -34,7 +33,6 @@ class App extends Component {
           <Educational />
           <Practical />
         </div>
-        <Edit />
         <button type="button" className="edit-button" onClick={this.handleEdit}>
           Edit
         </button>

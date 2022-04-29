@@ -10,13 +10,7 @@ class App extends Component {
     this.state = {
       editState: false
     };
-
-    this.handleEdit = this.handleEdit.bind(this);
     this.submitForm = this.submitForm.bind(this);
-  }
-
-  handleEdit() {
-    this.state.editState ? this.setState({ editState: false }) : this.setState({ editState: true });
   }
 
   submitForm(e) {
@@ -33,9 +27,6 @@ class App extends Component {
           <Educational editState={this.state.editState} />
           <Practical editState={this.state.editState} />
         </div>
-        <button type="button" className="edit-button" onClick={this.handleEdit}>
-          Edit
-        </button>
       </div>
     );
   }

@@ -1,23 +1,23 @@
 import React from 'react';
 
-function PracticalEdit() {
+function PracticalEdit(props) {
   return (
-    <form>
+    <form className="edit-form" onSubmit={props.handleSubmit}>
       <label>
         Company Name:
-        <input type="text" />
+        <input type="text" value={props.company} onChange={props.changeCompany} />
       </label>
       <label>
-        Title of Position:
-        <input type="text" />
+        Position:
+        <input type="text" value={props.position} onChange={props.changePosition} />
       </label>
       <label>
-        Main Responsibilities:
-        <input type="text" />
+        Role:
+        <input type="text" value={props.role} onChange={props.changeRole} />
       </label>
       <label>
-        Dates of Employment:
-        <input type="text" />
+        Date of employment:
+        <input type="text" value={props.date} onChange={props.changeDate} />
       </label>
       <button type="submit">Submit</button>
     </form>

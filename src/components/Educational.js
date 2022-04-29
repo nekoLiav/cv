@@ -6,6 +6,7 @@ class Educational extends Component {
     super(props);
 
     this.state = {
+      editState: false,
       school: '',
       subject: '',
       date: ''
@@ -13,31 +14,53 @@ class Educational extends Component {
 
     this.handleSchoolChange = this.handleSchoolChange.bind(this);
     this.handleSubjectChange = this.handleSubjectChange.bind(this);
-    this.handleEducationalDateChange = this.handleEducationalDateChange.bind(this);
+    this.handleDateChange = this.handleDateChange.bind(this);
+    this.handleEdit = this.handleEdit.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSchoolChange() {
-    this.setState();
+  handleSchoolChange(e) {
+    this.setState({ school: e.target.value });
   }
 
-  handleSubjectChange() {
-    this.setState();
+  handleSubjectChange(e) {
+    this.setState({ subject: e.target.value });
   }
 
-  handleEducationalDateChange() {
-    this.setState();
+  handleDateChange(e) {
+    this.setState({ date: e.target.value });
+  }
+
+  handleEdit() {
+    this.state.editState ? this.setState({ editState: false }) : this.setState({ editState: true });
+  }
+
+  handleSubmit(e) {
+    this.setState({ editState: false });
+    e.preventDefault();
   }
 
   render() {
     return (
       <div className="educational">
-        {this.props.editState ? (
-          <EducationalEdit />
+        {this.state.editState ? (
+          <EducationalEdit
+            school={this.state.school}
+            changeSchool={this.handleSchoolChange}
+            subject={this.state.subject}
+            changeSubject={this.handleSubjectChange}
+            date={this.state.date}
+            changeDate={this.handleDateChange}
+            handleSubmit={this.handleSubmit}
+          />
         ) : (
-          <div className="educational-info">
+          <div className="info">
             <p>School Name: {this.state.school}</p>
             <p>Title of Study: {this.state.subject}</p>
             <p>Date of Study: {this.state.date}</p>
+            <button type="button" className="edit-button" onClick={this.handleEdit}>
+              Edit
+            </button>
           </div>
         )}
       </div>

@@ -1,19 +1,19 @@
 import React from 'react';
 
-function GeneralEdit() {
+function GeneralEdit(props) {
   return (
-    <form>
+    <form className="edit-form" onSubmit={props.handleSubmit}>
       <label htmlFor="name">
         Name:
-        <input type="text" id="name" />
+        <input type="text" id="name" value={props.name} onChange={props.changeName} />
       </label>
       <label htmlFor="email">
         Email:
-        <input type="email" id="email" />
+        <input type="email" id="email" value={props.email} onChange={props.changeEmail} />
       </label>
       <label htmlFor="phone">
         Phone #:
-        <input type="text" id="phone" />
+        <input type="text" id="phone" value={props.phone} onChange={props.changePhone} />
       </label>
       <button type="submit">Submit</button>
     </form>

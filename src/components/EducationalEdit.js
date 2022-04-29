@@ -1,19 +1,19 @@
 import React from 'react';
 
-function EducationalEdit() {
+function EducationalEdit(props) {
   return (
-    <form>
+    <form className="edit-form" onSubmit={props.handleSubmit}>
       <label htmlFor="name">
         School Name:
-        <input type="text" id="name" />
+        <input type="text" id="name" value={props.school} onChange={props.changeSchool} />
       </label>
       <label htmlFor="email">
         Title of Study:
-        <input type="email" id="email" />
+        <input type="email" id="email" value={props.subject} onChange={props.changeSubject} />
       </label>
       <label htmlFor="phone">
         Date of Study:
-        <input type="text" id="phone" />
+        <input type="text" id="phone" value={props.date} onChange={props.changeDate} />
       </label>
       <button type="submit">Submit</button>
     </form>

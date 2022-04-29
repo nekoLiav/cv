@@ -39,6 +39,8 @@ code {
 
 .edit-button {
   width: 4rem;
+  margin-top: auto;
+  margin-left: auto;
 }
 
 .edit {
@@ -50,11 +52,31 @@ code {
 .edit-form {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.edit-form button {
+  width: 4rem;
+  margin-top: auto;
+  margin-left: auto;
 }
 
 .edit-form label {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.info p {
+  height: 1.2rem;
 }
 
 fieldset {

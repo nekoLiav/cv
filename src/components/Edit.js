@@ -1,29 +1,21 @@
 import React from 'react';
 
 function Edit(props) {
-  if (!props.editState) {
-    return null;
-  }
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  // };
-
   return (
     <div className="edit">
-      <form className="edit-form">
+      <form className="edit-form" onSubmit={props.onFormSubmitted}>
         <fieldset>
           <legend>Edit General Information</legend>
           <label htmlFor="name">
             Name:
-            <input type="text" id="name" />
+            <input type="text" id="name" onChange={props.nameChange} />
           </label>
           <label htmlFor="email">
             Email:
             <input type="email" id="email" />
           </label>
           <label htmlFor="phone">
-            Phone Number:
+            Phone #:
             <input type="text" id="phone" />
           </label>
         </fieldset>

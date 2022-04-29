@@ -29,9 +29,9 @@ class App extends Component {
     return (
       <div className="main">
         <div className="information-fields">
-          <General />
-          <Educational />
-          <Practical />
+          <General editState={this.state.editState} />
+          <Educational editState={this.state.editState} />
+          <Practical editState={this.state.editState} />
         </div>
         <button type="button" className="edit-button" onClick={this.handleEdit}>
           Edit

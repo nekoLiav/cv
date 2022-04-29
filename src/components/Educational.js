@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import EducationalEdit from './EducationalEdit';
 
 class Educational extends Component {
   constructor(props) {
@@ -30,9 +31,15 @@ class Educational extends Component {
   render() {
     return (
       <div className="educational">
-        <p>School Name: {this.state.school}</p>
-        <p>Title of Study: {this.state.subject}</p>
-        <p>Date of Study: {this.state.date}</p>
+        {this.props.editState ? (
+          <EducationalEdit />
+        ) : (
+          <div className="educational-info">
+            <p>School Name: {this.state.school}</p>
+            <p>Title of Study: {this.state.subject}</p>
+            <p>Date of Study: {this.state.date}</p>
+          </div>
+        )}
       </div>
     );
   }

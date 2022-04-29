@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import GeneralEdit from './GeneralEdit';
 
 class General extends Component {
   constructor(props) {
@@ -30,9 +31,15 @@ class General extends Component {
   render() {
     return (
       <div className="general">
-        <p>Name: {this.state.name}</p>
-        <p>Email: {this.state.email}</p>
-        <p>Phone #: {this.state.phone}</p>
+        {this.props.editState ? (
+          <GeneralEdit />
+        ) : (
+          <div className="general-info">
+            <p>Name: {this.state.name}</p>
+            <p>Email: {this.state.email}</p>
+            <p>Phone #: {this.state.phone}</p>
+          </div>
+        )}
       </div>
     );
   }

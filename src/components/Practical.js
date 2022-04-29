@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PracticalEdit from './PracticalEdit';
 
 class Practical extends Component {
   constructor(props) {
@@ -36,10 +37,16 @@ class Practical extends Component {
   render() {
     return (
       <div className="practical">
-        <p>Company Name: {this.state.company}</p>
-        <p>Position: {this.state.position}</p>
-        <p>Role: {this.state.role}</p>
-        <p>Date of employment: {this.state.date}</p>
+        {this.props.editState ? (
+          <PracticalEdit />
+        ) : (
+          <div className="practical-info">
+            <p>Company Name: {this.state.company}</p>
+            <p>Position: {this.state.position}</p>
+            <p>Role: {this.state.role}</p>
+            <p>Date of employment: {this.state.date}</p>
+          </div>
+        )}
       </div>
     );
   }

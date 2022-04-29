@@ -4,15 +4,15 @@ function EducationalEdit() {
   return (
     <form>
       <label htmlFor="name">
-        Name:
+        School Name:
         <input type="text" id="name" />
       </label>
       <label htmlFor="email">
-        Email:
+        Title of Study:
         <input type="email" id="email" />
       </label>
       <label htmlFor="phone">
-        Phone #:
+        Date of Study:
         <input type="text" id="phone" />
       </label>
       <button type="submit">Submit</button>

@@ -1,20 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Practical extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <div className="practical">
-        <p>Company Name:</p>
-        <p>Position:</p>
-        <p>Role:</p>
-        <p>Date of employment:</p>
-      </div>
-    );
-  }
+function Practical() {
+  return (
+    <div className="practical">
+      <p>Company Name:</p>
+      <p>Position:</p>
+      <p>Role:</p>
+      <p>Date of employment:</p>
+    </div>
+  );
 }
 
 export default Practical;

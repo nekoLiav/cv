@@ -89,14 +89,16 @@ class App extends Component {
     return (
       <div className="main">
         <div className="information-fields">
-          <Edit editState={this.state.editState} />
-          <General />
+          <General name={this.state.name} email={this.state.email} phone={this.state.phone} />
           <Educational />
           <Practical />
         </div>
-        <button type="button" className="edit-button" onClick={this.handleEdit}>
-          Edit
-        </button>
+        <Edit editState={this.state.editState} />
+        {!this.state.editState && (
+          <button type="button" className="edit-button" onClick={this.handleEdit}>
+            Edit
+          </button>
+        )}
       </div>
     );
   }

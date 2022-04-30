@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import GeneralEdit from './GeneralEdit';
+import ProfilePicture from './ProfilePicture';
 
 class General extends Component {
   constructor(props) {
@@ -43,6 +44,7 @@ class General extends Component {
   render() {
     return (
       <div className="general">
+        <ProfilePicture />
         {this.state.editState && (
           <GeneralEdit
             name={this.state.name}

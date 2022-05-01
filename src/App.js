@@ -8,55 +8,65 @@ class App extends Component {
     super(props);
 
     this.state = {
-      educationList: [],
-      employmentList: []
+      mode: true,
+      educationList: [{ key: Date.now() }],
+      practicalList: [{ key: Date.now() }]
     };
 
-    this.submitForm = this.submitForm.bind(this);
     this.addEducation = this.addEducation.bind(this);
     this.addEmployment = this.addEmployment.bind(this);
-  }
-
-  submitForm(e) {
-    this.setState({ name: e.target.value });
-    e.preventDefault();
-    console.log(e.target);
+    this.toggleMode = this.toggleMode.bind(this);
   }
 
   addEducation() {
     this.setState((prevState) => ({
-      educationList: [
-        ...prevState.educationList,
-        { key: Date.now(), education: <Educational key={Date.now()} /> }
-      ]
+      educationList: [...prevState.educationList, { key: Date.now() }]
     }));
   }
 
   addEmployment() {
     this.setState((prevState) => ({
-      employmentList: [
-        ...prevState.employmentList,
-        { key: Date.now(), employment: <Practical key={Date.now()} /> }
-      ]
+      practicalList: [...prevState.practicalList, { key: Date.now() }]
     }));
+  }
+
+  toggleMode() {
+    this.setState(this.state.mode ? { mode: false } : { mode: true });
   }
 
   render() {
     return (
-      <div className="main">
-        <General />
-        <div className="educational-container">
-          {this.state.educationList.map((item) => item.education)}
-          <button type="button" onClick={this.addEducation}>
-            Add Education
-          </button>
+      <div className="page">
+        <header />
+        <div className="main">
+          <General />
+          <div className="info-containers">
+            <div className="educational-container">
+              <h1>Education Background</h1>
+              {this.state.educationList.map((l) => (
+                <Educational key={l.key} mode={this.state.mode} />
+              ))}
+              <button type="button" className="add-button" onClick={this.addEducation}>
+                Add Education
+              </button>
+            </div>
+            <div className="practical-container">
+              <h1>Employment Background</h1>
+              {this.state.practicalList.map((l) => (
+                <Practical key={l.key} mode={this.state.mode} />
+              ))}
+              <button type="button" className="add-button" onClick={this.addEmployment}>
+                Add Employment
+              </button>
+            </div>
+          </div>
+          <div className="button-container">
+            <button type="button" className="toggle-edit-button" onClick={this.toggleMode}>
+              Preview Mode
+            </button>
+          </div>
         </div>
-        <div className="practical-container">
-          {this.state.employmentList.map((item) => item.employment)}
-          <button type="button" onClick={this.addEmployment}>
-            Add Employment
-          </button>
-        </div>
+        <footer />
       </div>
     );
   }

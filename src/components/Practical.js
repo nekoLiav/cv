@@ -6,7 +6,7 @@ class Practical extends Component {
     super(props);
 
     this.state = {
-      editState: false,
+      edit: false,
       company: '',
       position: '',
       role: '',
@@ -38,18 +38,18 @@ class Practical extends Component {
   }
 
   handleEdit() {
-    this.state.editState ? this.setState({ editState: false }) : this.setState({ editState: true });
+    this.state.edit ? this.setState({ edit: false }) : this.setState({ edit: true });
   }
 
   handleSubmit(e) {
-    this.setState({ editState: false });
+    this.setState({ edit: false });
     e.preventDefault();
   }
 
   render() {
     return (
       <div className="practical">
-        {this.state.editState && (
+        {this.state.edit && (
           <PracticalEdit
             company={this.state.company}
             changeCompany={this.handleCompanyChange}
@@ -62,15 +62,17 @@ class Practical extends Component {
             handleSubmit={this.handleSubmit}
           />
         )}
-        {!this.state.editState && (
+        {!this.state.edit && (
           <div className="info">
             <p>Company Name: {this.state.company}</p>
             <p>Position: {this.state.position}</p>
             <p>Role: {this.state.role}</p>
             <p>Date of employment: {this.state.date}</p>
-            <button type="button" className="edit-button" onClick={this.handleEdit}>
-              Edit
-            </button>
+            {this.props.mode && (
+              <button type="button" className="edit-button" onClick={this.handleEdit}>
+                Edit
+              </button>
+            )}
           </div>
         )}
       </div>

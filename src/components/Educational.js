@@ -6,7 +6,7 @@ class Educational extends Component {
     super(props);
 
     this.state = {
-      editState: false,
+      edit: false,
       school: '',
       subject: '',
       date: ''
@@ -32,18 +32,18 @@ class Educational extends Component {
   }
 
   handleEdit() {
-    this.state.editState ? this.setState({ editState: false }) : this.setState({ editState: true });
+    this.state.edit ? this.setState({ edit: false }) : this.setState({ edit: true });
   }
 
   handleSubmit(e) {
-    this.setState({ editState: false });
+    this.setState({ edit: false });
     e.preventDefault();
   }
 
   render() {
     return (
       <div className="educational">
-        {this.state.editState && (
+        {this.state.edit && (
           <EducationalEdit
             school={this.state.school}
             changeSchool={this.handleSchoolChange}
@@ -54,7 +54,7 @@ class Educational extends Component {
             handleSubmit={this.handleSubmit}
           />
         )}
-        {!this.state.editState && (
+        {!this.state.edit && (
           <div className="info">
             <p>School Name: {this.state.school}</p>
             <p>Title of Study: {this.state.subject}</p>

@@ -19,7 +19,9 @@ function PracticalEdit(props) {
         Date of employment:
         <input type="text" value={props.date} onChange={props.changeDate} />
       </label>
-      <button type="submit">Submit</button>
+      <button type="submit" className="submit-button">
+        Submit
+      </button>
     </form>
   );
 }

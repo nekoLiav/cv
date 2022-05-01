@@ -7,7 +7,7 @@ class General extends Component {
     super(props);
 
     this.state = {
-      editState: false,
+      edit: false,
       name: '',
       email: '',
       phone: ''
@@ -33,11 +33,11 @@ class General extends Component {
   }
 
   handleEdit() {
-    this.state.editState ? this.setState({ editState: false }) : this.setState({ editState: true });
+    this.state.edit ? this.setState({ edit: false }) : this.setState({ edit: true });
   }
 
   handleSubmit(e) {
-    this.setState({ editState: false });
+    this.setState({ edit: false });
     e.preventDefault();
   }
 
@@ -45,7 +45,7 @@ class General extends Component {
     return (
       <div className="general">
         <ProfilePicture />
-        {this.state.editState && (
+        {this.state.edit && (
           <GeneralEdit
             name={this.state.name}
             changeName={this.handleNameChange}
@@ -56,7 +56,7 @@ class General extends Component {
             handleSubmit={this.handleSubmit}
           />
         )}
-        {!this.state.editState && (
+        {!this.state.edit && (
           <div className="info">
             <p>Name: {this.state.name}</p>
             <p>Email: {this.state.email}</p>

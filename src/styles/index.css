@@ -27,52 +27,69 @@ body {
 }
 
 header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 5rem;
-  background-color: lightcoral;
+  font-size: 2rem;
+  font-weight: bold;
+  background-color: #325d81;
+  color: white;
 }
 
 .main {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 7rem 7rem 1fr;
+  display: flex;
+  flex-direction: column;
   height: 100%;
   width: 100%;
-  padding: 0.5rem;
-  gap: 0.5rem;
   overflow: auto;
+  border: 1px solid #91b6d4;
+  padding: 0.5rem;
+}
+
+.candidate-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: min-content 1fr min-content;
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 5;
+  border: 1px solid #91b6d4;
+  gap: 0.5rem;
 }
 
 .general {
   display: flex;
-  grid-column-start: 2;
-  grid-column-end: 4;
-  gap: 0.5rem;
+  flex-direction: column;
+  grid-row-start: 1;
+  grid-row-end: 4;
+  border: 1px solid #91b6d4;
 }
 
 .profile-picture {
-  min-width: 10rem;
-  background-color: lightcoral;
-  border-radius: 5px;
+  max-height: calc(9rem + 8px);
+  background-color: white;
+  width: 10rem;
+  height: 10rem;
+  border: 1px solid #91b6d4;
 }
 
 .info-containers {
   display: flex;
-  grid-row-start: 2;
   grid-column-start: 2;
   grid-column-end: 4;
+  border: 1px solid #91b6d4;
   gap: 0.5rem;
 }
 
 .info {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   height: 7rem;
-  background-color: lightcoral;
-  padding: 0.5rem;
-  padding-top: calc(0.5rem + 1px);
+  background-color: white;
   width: 100%;
-  border-radius: 5px;
+  border: 1px solid #91b6d4;
 }
 
 .practical-container,
@@ -81,30 +98,37 @@ header {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  gap: 0.5rem;
+  border: 1px solid #91b6d4;
 }
 
 h1 {
-  padding: 0.5rem;
-  background-color: lightcoral;
+  background-color: white;
   text-align: center;
-  border-radius: 5px;
-  min-width: 13rem;
+  border: 1px solid #91b6d4;
+}
+
+label {
+  display: flex;
+  border: 1px solid #91b6d4;
+}
+
+.info p {
+  border: 1px solid #91b6d4;
 }
 
 .educational,
 .practical {
   width: 100%;
+  border: 1px solid #91b6d4;
 }
 
 .edit-form {
   display: flex;
   flex-direction: column;
+  background-color: white;
+  width: 100%;
   height: 7rem;
-  justify-content: space-between;
-  padding: 0.5rem;
-  background-color: lightcoral;
-  border-radius: 5px;
+  border: 1px solid #91b6d4;
 }
 
 .submit-button,
@@ -117,15 +141,16 @@ h1 {
 .button-container {
   display: flex;
   grid-column-start: 2;
-  grid-column-end: 4;
+  grid-column-end: 3;
   grid-row-start: 3;
   justify-content: center;
   margin-top: auto;
   width: 100%;
+  border: 1px solid #91b6d4;
 }
 
 footer {
   height: 5rem;
   margin-top: auto;
-  background-color: lightcoral;
+  background-color: #325d81;
 }

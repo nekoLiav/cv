@@ -61,9 +61,11 @@ class General extends Component {
             <p>Name: {this.state.name}</p>
             <p>Email: {this.state.email}</p>
             <p>Phone #: {this.state.phone}</p>
-            <button type="button" className="edit-button" onClick={this.handleEdit}>
-              Edit
-            </button>
+            {this.props.mode && (
+              <button type="button" className="edit-button" onClick={this.handleEdit}>
+                Edit
+              </button>
+            )}
           </div>
         )}
       </div>

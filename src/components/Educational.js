@@ -9,12 +9,14 @@ class Educational extends Component {
       edit: false,
       school: '',
       subject: '',
-      date: ''
+      dateStart: '',
+      dateEnd: ''
     };
 
     this.handleSchoolChange = this.handleSchoolChange.bind(this);
     this.handleSubjectChange = this.handleSubjectChange.bind(this);
-    this.handleDateChange = this.handleDateChange.bind(this);
+    this.handleDateStartChange = this.handleDateStartChange.bind(this);
+    this.handleDateEndChange = this.handleDateEndChange.bind(this);
     this.handleEdit = this.handleEdit.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -27,8 +29,12 @@ class Educational extends Component {
     this.setState({ subject: e.target.value });
   }
 
-  handleDateChange(e) {
-    this.setState({ date: e.target.value });
+  handleDateStartChange(e) {
+    this.setState({ dateStart: e.target.value });
+  }
+
+  handleDateEndChange(e) {
+    this.setState({ dateEnd: e.target.value });
   }
 
   handleEdit() {
@@ -49,8 +55,10 @@ class Educational extends Component {
             changeSchool={this.handleSchoolChange}
             subject={this.state.subject}
             changeSubject={this.handleSubjectChange}
-            date={this.state.date}
-            changeDate={this.handleDateChange}
+            dateStart={this.state.dateStart}
+            changeDateStart={this.handleDateStartChange}
+            dateEnd={this.state.dateEnd}
+            changeDateEnd={this.handleDateEndChange}
             handleSubmit={this.handleSubmit}
           />
         )}
@@ -58,10 +66,13 @@ class Educational extends Component {
           <div className="info">
             <p>School Name: {this.state.school}</p>
             <p>Title of Study: {this.state.subject}</p>
-            <p>Date of Study: {this.state.date}</p>
-            <button type="button" className="edit-button" onClick={this.handleEdit}>
-              Edit
-            </button>
+            <p>Start Date: {this.state.dateStart}</p>
+            <p>End Date: {this.state.dateEnd}</p>
+            {this.props.mode && (
+              <button type="button" className="edit-button" onClick={this.handleEdit}>
+                Edit
+              </button>
+            )}
           </div>
         )}
       </div>

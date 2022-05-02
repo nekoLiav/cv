@@ -9,14 +9,14 @@ class Practical extends Component {
       edit: false,
       company: '',
       position: '',
-      role: '',
-      date: ''
+      dateStart: '',
+      dateEnd: ''
     };
 
     this.handleCompanyChange = this.handleCompanyChange.bind(this);
     this.handlePositionChange = this.handlePositionChange.bind(this);
-    this.handleRoleChange = this.handleRoleChange.bind(this);
-    this.handleDateChange = this.handleDateChange.bind(this);
+    this.handleDateStartChange = this.handleDateStartChange.bind(this);
+    this.handleDateEndChange = this.handleDateEndChange.bind(this);
     this.handleEdit = this.handleEdit.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -29,12 +29,12 @@ class Practical extends Component {
     this.setState({ position: e.target.value });
   }
 
-  handleRoleChange(e) {
-    this.setState({ role: e.target.value });
+  handleDateStartChange(e) {
+    this.setState({ dateStart: e.target.value });
   }
 
-  handleDateChange(e) {
-    this.setState({ date: e.target.value });
+  handleDateEndChange(e) {
+    this.setState({ dateEnd: e.target.value });
   }
 
   handleEdit() {
@@ -55,19 +55,19 @@ class Practical extends Component {
             changeCompany={this.handleCompanyChange}
             position={this.state.position}
             changePosition={this.handlePositionChange}
-            role={this.state.role}
-            changeRole={this.handleRoleChange}
-            date={this.state.date}
-            changeDate={this.handleDateChange}
+            dateStart={this.state.dateStart}
+            changeDateStart={this.handleDateStartChange}
+            dateEnd={this.state.dateEnd}
+            changeDateEnd={this.handleDateEndChange}
             handleSubmit={this.handleSubmit}
           />
         )}
         {!this.state.edit && (
           <div className="info">
             <p>Company Name: {this.state.company}</p>
-            <p>Position: {this.state.position}</p>
-            <p>Role: {this.state.role}</p>
-            <p>Date of employment: {this.state.date}</p>
+            <p>Position/Role: {this.state.position}</p>
+            <p>Start Date: {this.state.dateStart}</p>
+            <p>End Date: {this.state.dateEnd}</p>
             {this.props.mode && (
               <button type="button" className="edit-button" onClick={this.handleEdit}>
                 Edit

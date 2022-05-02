@@ -13,7 +13,7 @@ function GeneralEdit(props) {
       </label>
       <label htmlFor="phone">
         Phone #:
-        <input type="text" id="phone" value={props.phone} onChange={props.changePhone} />
+        <input type="tel" id="phone" value={props.phone} onChange={props.changePhone} />
       </label>
       <button type="submit" className="submit-button">
         Submit

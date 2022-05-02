@@ -3,21 +3,21 @@ import React from 'react';
 function PracticalEdit(props) {
   return (
     <form className="edit-form" onSubmit={props.handleSubmit}>
-      <label>
+      <label htmlFor="company-name">
         Company Name:
         <input type="text" value={props.company} onChange={props.changeCompany} />
       </label>
-      <label>
-        Position:
+      <label htmlFor="position">
+        Position/Role:
         <input type="text" value={props.position} onChange={props.changePosition} />
       </label>
-      <label>
-        Role:
-        <input type="text" value={props.role} onChange={props.changeRole} />
+      <label htmlFor="start-date">
+        Start Date:
+        <input type="text" value={props.dateStart} onChange={props.changeDateStart} />
       </label>
-      <label>
-        Date of employment:
-        <input type="text" value={props.date} onChange={props.changeDate} />
+      <label htmlFor="end-date">
+        End Date:
+        <input type="text" value={props.dateEnd} onChange={props.changeDateEnd} />
       </label>
       <button type="submit" className="submit-button">
         Submit

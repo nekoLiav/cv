@@ -7,13 +7,17 @@ function EducationalEdit(props) {
         School Name:
         <input type="text" id="name" value={props.school} onChange={props.changeSchool} />
       </label>
-      <label htmlFor="email">
-        Title of Study:
-        <input type="email" id="email" value={props.subject} onChange={props.changeSubject} />
+      <label htmlFor="subject">
+        Subject:
+        <input type="text" value={props.subject} onChange={props.changeSubject} />
       </label>
-      <label htmlFor="phone">
-        Date of Study:
-        <input type="text" id="phone" value={props.date} onChange={props.changeDate} />
+      <label htmlFor="start-date">
+        Start Date:
+        <input type="text" value={props.dateStart} onChange={props.changeDateStart} />
+      </label>
+      <label htmlFor="start-date">
+        End Date:
+        <input type="text" value={props.dateEnd} onChange={props.changeDateEnd} />
       </label>
       <button type="submit" className="submit-button">
         Submit

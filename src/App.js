@@ -79,7 +79,7 @@ class App extends Component {
             {this.state.toggleButtonText}
           </button>
         </div>
-        <footer />
+        <footer></footer>
       </div>
     );
   }

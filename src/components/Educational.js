@@ -6,7 +6,6 @@ class Educational extends Component {
     super(props);
 
     this.state = {
-      edit: false,
       school: '',
       subject: '',
       dateStart: '',
@@ -17,8 +16,6 @@ class Educational extends Component {
     this.handleSubjectChange = this.handleSubjectChange.bind(this);
     this.handleDateStartChange = this.handleDateStartChange.bind(this);
     this.handleDateEndChange = this.handleDateEndChange.bind(this);
-    this.handleEdit = this.handleEdit.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSchoolChange(e) {
@@ -37,19 +34,10 @@ class Educational extends Component {
     this.setState({ dateEnd: e.target.value });
   }
 
-  handleEdit() {
-    this.state.edit ? this.setState({ edit: false }) : this.setState({ edit: true });
-  }
-
-  handleSubmit(e) {
-    this.setState({ edit: false });
-    e.preventDefault();
-  }
-
   render() {
     return (
       <div className="educational">
-        {this.state.edit && (
+        {this.props.mode && (
           <EducationalEdit
             school={this.state.school}
             changeSchool={this.handleSchoolChange}
@@ -59,20 +47,14 @@ class Educational extends Component {
             changeDateStart={this.handleDateStartChange}
             dateEnd={this.state.dateEnd}
             changeDateEnd={this.handleDateEndChange}
-            handleSubmit={this.handleSubmit}
           />
         )}
-        {!this.state.edit && (
+        {!this.props.mode && (
           <div className="info">
             <p>School Name: {this.state.school}</p>
-            <p>Title of Study: {this.state.subject}</p>
+            <p>Subject: {this.state.subject}</p>
             <p>Start Date: {this.state.dateStart}</p>
             <p>End Date: {this.state.dateEnd}</p>
-            {this.props.mode && (
-              <button type="button" className="edit-button" onClick={this.handleEdit}>
-                Edit
-              </button>
-            )}
           </div>
         )}
       </div>

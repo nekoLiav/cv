@@ -6,7 +6,6 @@ class Practical extends Component {
     super(props);
 
     this.state = {
-      edit: false,
       company: '',
       position: '',
       dateStart: '',
@@ -17,8 +16,6 @@ class Practical extends Component {
     this.handlePositionChange = this.handlePositionChange.bind(this);
     this.handleDateStartChange = this.handleDateStartChange.bind(this);
     this.handleDateEndChange = this.handleDateEndChange.bind(this);
-    this.handleEdit = this.handleEdit.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleCompanyChange(e) {
@@ -37,19 +34,10 @@ class Practical extends Component {
     this.setState({ dateEnd: e.target.value });
   }
 
-  handleEdit() {
-    this.state.edit ? this.setState({ edit: false }) : this.setState({ edit: true });
-  }
-
-  handleSubmit(e) {
-    this.setState({ edit: false });
-    e.preventDefault();
-  }
-
   render() {
     return (
       <div className="practical">
-        {this.state.edit && (
+        {this.props.mode && (
           <PracticalEdit
             company={this.state.company}
             changeCompany={this.handleCompanyChange}
@@ -59,20 +47,14 @@ class Practical extends Component {
             changeDateStart={this.handleDateStartChange}
             dateEnd={this.state.dateEnd}
             changeDateEnd={this.handleDateEndChange}
-            handleSubmit={this.handleSubmit}
           />
         )}
-        {!this.state.edit && (
+        {!this.props.mode && (
           <div className="info">
             <p>Company Name: {this.state.company}</p>
             <p>Position/Role: {this.state.position}</p>
             <p>Start Date: {this.state.dateStart}</p>
             <p>End Date: {this.state.dateEnd}</p>
-            {this.props.mode && (
-              <button type="button" className="edit-button" onClick={this.handleEdit}>
-                Edit
-              </button>
-            )}
           </div>
         )}
       </div>

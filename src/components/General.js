@@ -7,7 +7,7 @@ class General extends Component {
     super(props);
 
     this.state = {
-      edit: false,
+      aboutMe: '',
       name: '',
       email: '',
       phone: ''
@@ -16,8 +16,11 @@ class General extends Component {
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleEmailChange = this.handleEmailChange.bind(this);
     this.handlePhoneChange = this.handlePhoneChange.bind(this);
-    this.handleEdit = this.handleEdit.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleAboutMeChange = this.handleAboutMeChange.bind(this);
+  }
+
+  handleAboutMeChange(e) {
+    this.setState({ aboutMe: e.target.value });
   }
 
   handleNameChange(e) {
@@ -32,20 +35,11 @@ class General extends Component {
     this.setState({ phone: e.target.value });
   }
 
-  handleEdit() {
-    this.state.edit ? this.setState({ edit: false }) : this.setState({ edit: true });
-  }
-
-  handleSubmit(e) {
-    this.setState({ edit: false });
-    e.preventDefault();
-  }
-
   render() {
     return (
       <div className="general">
         <ProfilePicture />
-        {this.state.edit && (
+        {this.props.mode && (
           <GeneralEdit
             name={this.state.name}
             changeName={this.handleNameChange}
@@ -53,19 +47,16 @@ class General extends Component {
             changeEmail={this.handleEmailChange}
             phone={this.state.phone}
             changePhone={this.handlePhoneChange}
-            handleSubmit={this.handleSubmit}
+            aboutMe={this.state.aboutMe}
+            changeAbout={this.handleAboutMeChange}
           />
         )}
-        {!this.state.edit && (
+        {!this.props.mode && (
           <div className="info">
             <p>Name: {this.state.name}</p>
             <p>Email: {this.state.email}</p>
             <p>Phone #: {this.state.phone}</p>
-            {this.props.mode && (
-              <button type="button" className="edit-button" onClick={this.handleEdit}>
-                Edit
-              </button>
-            )}
+            <p>About Me: {this.state.aboutMe}</p>
           </div>
         )}
       </div>

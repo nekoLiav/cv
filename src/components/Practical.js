@@ -1,65 +1,52 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import PracticalEdit from './PracticalEdit';
 
-class Practical extends Component {
-  constructor(props) {
-    super(props);
+const Practical = (props) => {
+  const [company, setCompany] = useState('');
+  const [position, setPosition] = useState('');
+  const [dateStart, setDateStart] = useState('');
+  const [dateEnd, setDateEnd] = useState('');
 
-    this.state = {
-      company: '',
-      position: '',
-      dateStart: '',
-      dateEnd: ''
-    };
+  const handleCompanyChange = (e) => {
+    setCompany(e.target.value);
+  };
 
-    this.handleCompanyChange = this.handleCompanyChange.bind(this);
-    this.handlePositionChange = this.handlePositionChange.bind(this);
-    this.handleDateStartChange = this.handleDateStartChange.bind(this);
-    this.handleDateEndChange = this.handleDateEndChange.bind(this);
-  }
+  const handlePositionChange = (e) => {
+    setPosition(e.target.value);
+  };
 
-  handleCompanyChange(e) {
-    this.setState({ company: e.target.value });
-  }
+  const handleDateStartChange = (e) => {
+    setDateStart(e.target.value);
+  };
 
-  handlePositionChange(e) {
-    this.setState({ position: e.target.value });
-  }
+  const handleDateEndChange = (e) => {
+    setDateEnd(e.target.value);
+  };
 
-  handleDateStartChange(e) {
-    this.setState({ dateStart: e.target.value });
-  }
-
-  handleDateEndChange(e) {
-    this.setState({ dateEnd: e.target.value });
-  }
-
-  render() {
-    return (
-      <div className="practical">
-        {this.props.mode && (
-          <PracticalEdit
-            company={this.state.company}
-            changeCompany={this.handleCompanyChange}
-            position={this.state.position}
-            changePosition={this.handlePositionChange}
-            dateStart={this.state.dateStart}
-            changeDateStart={this.handleDateStartChange}
-            dateEnd={this.state.dateEnd}
-            changeDateEnd={this.handleDateEndChange}
-          />
-        )}
-        {!this.props.mode && (
-          <div className="info">
-            <p>Company Name: {this.state.company}</p>
-            <p>Position/Role: {this.state.position}</p>
-            <p>Start Date: {this.state.dateStart}</p>
-            <p>End Date: {this.state.dateEnd}</p>
-          </div>
-        )}
-      </div>
-    );
-  }
-}
+  return (
+    <div className="practical">
+      {props.mode && (
+        <PracticalEdit
+          company={company}
+          changeCompany={handleCompanyChange}
+          position={position}
+          changePosition={handlePositionChange}
+          dateStart={dateStart}
+          changeDateStart={handleDateStartChange}
+          dateEnd={dateEnd}
+          changeDateEnd={handleDateEndChange}
+        />
+      )}
+      {!props.mode && (
+        <div className="info">
+          <p>Company Name: {company}</p>
+          <p>Position/Role: {position}</p>
+          <p>Start Date: {dateStart}</p>
+          <p>End Date: {dateEnd}</p>
+        </div>
+      )}
+    </div>
+  );
+};
 
 export default Practical;

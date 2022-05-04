@@ -12,7 +12,7 @@
 
 <h4>Version 2:</h4>
 
-(in progress, rewrite using hooks)
+Every stateful component has been rewritten using the useState hook in functional components, as opposed to class components.
 
 <h3>Created With:</h3>
 React

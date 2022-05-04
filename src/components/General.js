@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import GeneralEdit from './GeneralEdit';
 import ProfilePicture from './ProfilePicture';
 
-const General = () => {
+const General = (props) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
@@ -27,7 +27,7 @@ const General = () => {
   return (
     <div className="general">
       <ProfilePicture />
-      {this.props.mode && (
+      {props.mode && (
         <GeneralEdit
           name={name}
           changeName={handleNameChange}
@@ -39,7 +39,7 @@ const General = () => {
           changeAbout={handleAboutMeChange}
         />
       )}
-      {!this.props.mode && (
+      {!props.mode && (
         <div className="info">
           <p>Name: {name}</p>
           <p>Email: {email}</p>

@@ -1,65 +1,52 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import EducationalEdit from './EducationalEdit';
 
-class Educational extends Component {
-  constructor(props) {
-    super(props);
+const Educational = (props) => {
+  const [school, setSchool] = useState('');
+  const [subject, setSubject] = useState('');
+  const [dateStart, setDateStart] = useState('');
+  const [dateEnd, setDateEnd] = useState('');
 
-    this.state = {
-      school: '',
-      subject: '',
-      dateStart: '',
-      dateEnd: ''
-    };
+  const handleSchoolChange = (e) => {
+    setSchool(e.target.value);
+  };
 
-    this.handleSchoolChange = this.handleSchoolChange.bind(this);
-    this.handleSubjectChange = this.handleSubjectChange.bind(this);
-    this.handleDateStartChange = this.handleDateStartChange.bind(this);
-    this.handleDateEndChange = this.handleDateEndChange.bind(this);
-  }
+  const handleSubjectChange = (e) => {
+    setSubject(e.target.value);
+  };
 
-  handleSchoolChange(e) {
-    this.setState({ school: e.target.value });
-  }
+  const handleDateStartChange = (e) => {
+    setDateStart(e.target.value);
+  };
 
-  handleSubjectChange(e) {
-    this.setState({ subject: e.target.value });
-  }
+  const handleDateEndChange = (e) => {
+    setDateEnd(e.target.value);
+  };
 
-  handleDateStartChange(e) {
-    this.setState({ dateStart: e.target.value });
-  }
-
-  handleDateEndChange(e) {
-    this.setState({ dateEnd: e.target.value });
-  }
-
-  render() {
-    return (
-      <div className="educational">
-        {this.props.mode && (
-          <EducationalEdit
-            school={this.state.school}
-            changeSchool={this.handleSchoolChange}
-            subject={this.state.subject}
-            changeSubject={this.handleSubjectChange}
-            dateStart={this.state.dateStart}
-            changeDateStart={this.handleDateStartChange}
-            dateEnd={this.state.dateEnd}
-            changeDateEnd={this.handleDateEndChange}
-          />
-        )}
-        {!this.props.mode && (
-          <div className="info">
-            <p>School Name: {this.state.school}</p>
-            <p>Subject: {this.state.subject}</p>
-            <p>Start Date: {this.state.dateStart}</p>
-            <p>End Date: {this.state.dateEnd}</p>
-          </div>
-        )}
-      </div>
-    );
-  }
-}
+  return (
+    <div className="educational">
+      {props.mode && (
+        <EducationalEdit
+          school={school}
+          changeSchool={handleSchoolChange}
+          subject={subject}
+          changeSubject={handleSubjectChange}
+          dateStart={dateStart}
+          changeDateStart={handleDateStartChange}
+          dateEnd={dateEnd}
+          changeDateEnd={handleDateEndChange}
+        />
+      )}
+      {!props.mode && (
+        <div className="info">
+          <p>School Name: {school}</p>
+          <p>Subject: {subject}</p>
+          <p>Start Date: {dateStart}</p>
+          <p>End Date: {dateEnd}</p>
+        </div>
+      )}
+    </div>
+  );
+};
 
 export default Educational;
